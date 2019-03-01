@@ -6,10 +6,9 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-
 @Entity
 @Table(name = "licenses")
-public class License {
+public class License{
   @Id
   @Column(name = "license_id", nullable = false)
   private String licenseId;
@@ -29,7 +28,7 @@ public class License {
   @Column(name = "license_allocated", nullable = false)
   private Integer licenseAllocated;
 
-  @Column(name = "comment")
+  @Column(name="comment")
   private String comment;
 
 
@@ -90,38 +89,41 @@ public class License {
     this.comment = comment;
   }
 
-  public License withId(String id) {
+  public License withId(String id){
     this.setLicenseId(id);
     return this;
   }
 
-  public License withOrganizationId(String organizationId) {
+  public License withOrganizationId(String organizationId){
     this.setOrganizationId(organizationId);
     return this;
   }
 
-  public License withProductName(String productName) {
+  public License withProductName(String productName){
     this.setProductName(productName);
     return this;
   }
 
-  public License withLicenseType(String licenseType) {
+  public License withLicenseType(String licenseType){
     this.setLicenseType(licenseType);
     return this;
   }
 
-  public License withLicenseMax(Integer licenseMax) {
+  public License withLicenseMax(Integer licenseMax){
     this.setLicenseMax(licenseMax);
     return this;
   }
 
-  public License withLicenseAllocated(Integer licenseAllocated) {
+  public License withLicenseAllocated(Integer licenseAllocated){
     this.setLicenseAllocated(licenseAllocated);
     return this;
   }
 
-  public License withComment(String comment) {
+  public License withComment(String comment){
     this.setComment(comment);
     return this;
   }
+
+
+
 }

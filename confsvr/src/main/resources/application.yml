@@ -4,7 +4,7 @@ spring:
   cloud:
     config:
       server:
-        encrypt.enabled: false  #moved to bootstrap.yml. Doesn't Edgware support it in application.yml?
+        encrypt.enabled: false
         git:
           uri: https://github.com/carnellj/config-repo/
           searchPaths: licensingservice,organizationservice
@@ -20,4 +20,4 @@ spring:
 #    config:
 #      server:
 #        native:
-#          searchLocations: file:///C:\Users\rhernandez\IdeaProjects\spmia-chapter2-master\confsvr\src\main\resources\config\licensingservice
+#          searchLocations: file:///C:/Users/rhernandez/IdeaProjects/sprmsinaction_manning/confsvr/src/main/resources/licensingservice
