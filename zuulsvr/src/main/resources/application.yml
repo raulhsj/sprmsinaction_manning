@@ -1,0 +1,35 @@
+server:
+  port: 5555
+
+  #Setting logging levels
+logging:
+    level:
+      com.netflix: WARN
+      org.springframework.web: WARN
+      com.thoughtmechanix: DEBUG
+
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+        defaultZone: http://localhost:8761/eureka/
+
+zuul:
+  prefix:  /api
+  routes:
+    organizationservice: /organization/**
+    licensingservice: /licensing/**
+    licensestatic:
+      path: /licensestatic/**
+      #url: http://liceneservice-static:8081
+      serviceId: licensestatic
+  ignored-services: '*'
+
+licensestatic:
+  ribbon:
+    eureka:
+      enabled: false
+    listOfServers: http://licenseservice-static1:8081, http://licenseservice-static2:8082
