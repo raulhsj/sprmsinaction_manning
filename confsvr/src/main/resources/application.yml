@@ -20,7 +20,7 @@ spring:
       server:
         encrypt.enabled: false
         git:
-          uri: https://github.com/raulhsj/sprmsinaction_manning/confsvr/resources
+          uri: https://github.com/raulhsj/sprmsinaction_manning_configrepo
           searchPaths: licensingservice,organizationservice,specialroutesservice,zuulservice
           username: native-cloud-apps
           password: 0ffended
