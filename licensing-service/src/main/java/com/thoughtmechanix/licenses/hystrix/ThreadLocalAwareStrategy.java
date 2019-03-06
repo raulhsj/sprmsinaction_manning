@@ -5,6 +5,7 @@ import com.netflix.hystrix.strategy.concurrency.HystrixConcurrencyStrategy;
 import com.netflix.hystrix.strategy.concurrency.HystrixRequestVariable;
 import com.netflix.hystrix.strategy.concurrency.HystrixRequestVariableLifecycle;
 import com.netflix.hystrix.strategy.properties.HystrixProperty;
+import com.thoughtmechanix.licenses.utils.UserContext;
 import com.thoughtmechanix.licenses.utils.UserContextHolder;
 
 import java.util.concurrent.BlockingQueue;
@@ -51,6 +52,7 @@ public class ThreadLocalAwareStrategy extends HystrixConcurrencyStrategy{
 
     @Override
     public <T> Callable<T> wrapCallable(Callable<T> callable) {
+
         return existingConcurrencyStrategy != null
                 ? existingConcurrencyStrategy
                 .wrapCallable(new DelegatingUserContextCallable<T>(callable, UserContextHolder.getContext()))
